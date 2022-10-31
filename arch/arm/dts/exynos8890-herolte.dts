@@ -1,0 +1,28 @@
+// SPDX-License-Identifier: GPL-2.0+
+/*
+ * Samsung Exynos8890 SoC device tree source
+ *
+ * Copyright (c) 2022 Suraaj Vashisht (suraajvashisht@gmail.com)
+ */
+
+/dts-v1/;
+#include "exynos8890.dtsi"
+/ {
+	compatible = "samsung,exynos8890";
+
+	aliases {
+		console = &uart2;
+	};
+
+	chosen {
+		stdout-path = &uart2;
+	};
+};
+
+&gpioi2c0 {
+	status = "okay";
+};
+
+&fin_pll {
+	clock-frequency = <26000000>;
+};

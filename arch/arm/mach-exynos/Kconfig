@@ -50,6 +50,17 @@ config ARCH_EXYNOS7
 	  Cortex-A53 CPU (and some in a big.LITTLE configuration). There are
 	  multiple SoCs in this family including Exynos7420.
 
+config ARCH_EXYNOS8
+	bool "Exynos8 SoC family"
+	select ARM64
+	select BOARD_EARLY_INIT_F
+	select BLK
+	select DM_MMC
+	help
+	  Samsung Exynos8 SoC family are based on Exynos Mongoose CPU and
+	  Cortex-A53 CPU in a big.LITTLE configuration. There are
+	  multiple SoCs in this family including Exynos8890.
+
 endchoice
 
 if ARCH_EXYNOS4
@@ -210,6 +221,23 @@ config  TARGET_A3Y17LTE
 	select OF_CONTROL
 	select PINCTRL
 	select PINCTRL_EXYNOS78x0
+	select SUPPORT_SPL
+
+endchoice
+endif
+
+if ARCH_EXYNOS8
+
+choice
+	prompt "EXYNOS8 board select"
+
+config TARGET_HEROLTE
+	bool "Samsung SM-G930F board"
+	select ARM64
+	select CLK_EXYNOS
+	select OF_CONTROL
+	select PINCTRL
+	select PINCTRL_EXYNOS8890
 	select SUPPORT_SPL
 
 endchoice
