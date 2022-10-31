@@ -1,0 +1,140 @@
+// SPDX-License-Identifier: GPL-2.0+
+/*
+ * Samsung Exynos7880 SoC device tree source
+ *
+ * Copyright (c) 2022 Suraaj Vashisht (suraajvashisht@gmail.com)
+ */
+
+/dts-v1/;
+#include "skeleton.dtsi"
+#include "exynos8890-pinctrl.dtsi"
+#include "exynos8890-gpio.dtsi"
+/ {
+	compatible = "samsung,exynos8890";
+
+	fin_pll: xxti {
+		compatible = "fixed-clock";
+		clock-output-names = "fin_pll";
+		u-boot,dm-pre-reloc;
+		#clock-cells = <0>;
+	};
+
+	/* Dummy clock for uart */
+	fin_uart: uart_dummy_fin {
+		compatible = "fixed-clock";
+		clock-output-names = "fin_uart";
+		clock-frequency = <132710400>;
+		u-boot,dm-pre-reloc;
+		#clock-cells = <0>;
+	};
+
+	uart2: serial@13820000 {
+		compatible = "samsung,exynos4210-uart";
+		reg = <0x13820000 0x100>;
+		u-boot,dm-pre-reloc;
+		clocks = <&fin_uart>, <&fin_uart>; // driver uses 1st clock
+		clock-names = "uart", "clk_uart_baud0";
+		pinctrl-names = "default";
+		pinctrl-0 = <&uart2_bus>;
+	};
+
+	gpioi2c0: i2c-0 {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		compatible = "i2c-gpio";
+		status = "disabled";
+		gpios = <
+			&gpd1 0 0 /* sda */
+			&gpd1 1 0 /* scl */
+		>;
+		i2c-gpio,delay-us = <5>;
+
+		s2mu004@3d {
+			compatible = "samsung,s2mu004mfd";
+		};
+	};
+
+	/* ALIVE */
+	pinctrl_0: pinctrl@10580000 {
+		compatible = "samsung,exynos8890-pinctrl";
+		reg = <0x10580000 0x1000>;
+	};
+
+	/* AUD */
+	pinctrl_1: pinctrl@114B0000 {
+		compatible = "samsung,exynos8890-pinctrl";
+		reg = <0x114B0000 0x1000>;
+	};
+
+	/* CCORE */
+	pinctrl_2: pinctrl@105A0000 {
+		compatible = "samsung,exynos8890-pinctrl";
+		reg = <0x105A0000 0x1000>;
+	};
+
+	/* FSYS1 */
+	pinctrl_6: pinctrl@15690000 {
+		compatible = "samsung,exynos8890-pinctrl";
+		reg = <0x15690000 0x1000>;
+	};
+
+	/* PERIC0 */
+	pinctrl_8: pinctrl@136D0000 {
+		compatible = "samsung,exynos8890-pinctrl";
+		reg = <0x136D0000 0x1000>;
+	};
+
+	/* PERIC1 */
+	pinctrl_9: pinctrl@14CC0000 {
+		compatible = "samsung,exynos8890-pinctrl";
+		reg = <0x14CC0000 0x1000>;
+	};
+
+	/* ALIVE */
+	gpio_0: gpio@10580000 {
+		compatible = "samsung,exynos8890-gpio";
+		reg = <0x10580000 0x1000>;
+	};
+
+	/* AUD */
+	gpio_1: gpio@114B0000 {
+		compatible = "samsung,exynos8890-gpio";
+		reg = <0x114B0000 0x1000>;
+	};
+
+	/* CCORE */
+	gpio_2: gpio@105A0000 {
+		compatible = "samsung,exynos8890-gpio";
+		reg = <0x105A0000 0x1000>;
+	};
+
+	/* FP */
+	gpio_4: gpio@14CA0000 {
+		compatible = "samsung,exynos8890-gpio";
+		reg = <0x14CA0000 0x1000>;
+	};
+
+	/* FSYS0 */
+	gpio_5: gpio@10E60000 {
+		compatible = "samsung,exynos8890-gpio"
+		reg = <0x10E60000 0x1000>;
+	};
+
+	/* FSYS1 */
+	gpio_6: gpio@15690000 {
+		compatible = "samsung,exynos8890-gpio";
+		reg = <0x15690000 0x1000>;
+	};
+
+	/* PERIC0 */
+	gpio_8: gpio@136D0000 {
+		compatible = "samsung,exynos8890-gpio";
+		reg = <0x136D0000 0x1000>;
+	};
+
+	/* PERIC1 */
+	gpio_9: gpio@14CC0000 {
+		compatible = "samsung,exynos8890-gpio";
+		reg = <0x14CC0000 0x1000>;
+	};
+};
