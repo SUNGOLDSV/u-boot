@@ -1,0 +1,213 @@
+// SPDX-License-Identifier: GPL-2.0+
+/*
+ * Samsung's Exynos8890 SoC pin-mux and pin-config device tree source
+ *
+ * Copyright (c) 2013 Samsung Electronics Co., Ltd.
+ *		http://www.samsung.com
+ * Copyright (c) 2022 Suraaj Vashisht (suraajvashisht@gmail.com)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+/ {
+	/* ALIVE */
+	gpio@10580000 {
+		gpa0: gpa0 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpa1: gpa1 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpa2: gpa2 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpa3: gpa3 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+	};
+
+	/* AUD */
+	gpio@114B0000 {
+		gph0: gph0 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+	};
+
+	/* CCORE */
+	gpio@105A0000 {
+		etc0: etc0 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+	};
+
+	/* FP */
+	gpio@14CA0000 {
+		gpf3: gpf3 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+	};
+
+	/* FSYS0 */
+	gpio@10E60000 {
+		gpi1: gpi1 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+		gpi2: gpi2 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+	};
+
+	/* FSYS1 */
+	gpio@15690000 {
+		gpj0: gpj0 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+	};
+
+	/* PERIC0 */
+	gpio@136D0000 {
+		gpi0: gpi0 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpd0: gpd0 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpd1: gpd1 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpd2: gpd2 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpd3: gpd3 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpb1: gpb1 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpb2: gpb2 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpb0: gpb0 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpc0: gpc0 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpc1: gpc1 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpc2: gpc2 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpc3: gpc3 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+
+		gpk0: gpk0 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		etc1: etc1 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+	};
+
+	/* PERIC1 */
+	gpio@14CC0000 {
+		gpe0: gpe0 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpe5: gpe5 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpe6: gpe6 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpj1: gpj1 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpj2: gpj2 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpe2: gpe2 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpe3: gpe3 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpe4: gpe4 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpe1: gpe1 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpe7: gpe7 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+
+		gpg0: gpg0 {
+			gpio-controller;
+			#gpio-cells = <2>;
+		};
+	};
+};
