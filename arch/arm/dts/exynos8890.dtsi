@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-2.0+
 /*
- * Samsung Exynos7880 SoC device tree source
+ * Samsung Exynos8890 SoC device tree source
  *
  * Copyright (c) 2022 Suraaj Vashisht (suraajvashisht@gmail.com)
  */
